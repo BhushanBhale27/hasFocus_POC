@@ -48,16 +48,10 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateLog(message) {
         var logElement = document.createElement('h3');
         logElement.innerText = message;
-
-        // Insert the new log element at the beginning of the logContainer
-        logContainer.insertBefore(logElement, logContainer.firstChild);
-
-        // Optionally: Clear any undefined or null firstChild
-        if (!logContainer.firstChild) {
-            logContainer.appendChild(logElement);
-        }
+    
+        // Prepend the new log element at the beginning of the logContainer
+        logContainer.prepend(logElement);
     }
-
     function getBrowserVersion() {
         var userAgent = navigator.userAgent;
         var match = userAgent.match(/(Chrome|Firefox|Safari|MSIE|Trident)\/?\s*(\d+)/);
