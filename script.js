@@ -12,20 +12,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Display browser version on UI
     var browserVersion = getBrowserVersion();
-    var h2 = document.getElementById("h2")
+    var h2 = document.getElementById("h2");
     h2.innerHTML = "Your chrome version is " + browserVersion;
 
-
-// Event listener for when the iframe loads
-iframe.onload = function() {
-    var focusStatus = document.hasFocus();
-    var focusStatusValue = focusStatus ? "true" : "false";
-    var message = "The iframe has loaded. Current focus status of the parent document is: " + focusStatusValue + ".";
-
-    updateLog(message);
-};
-
-
+    // Event listener for when the iframe loads
+    iframe.onload = function() {
+        var focusStatus = document.hasFocus();
+        var focusStatusValue = focusStatus ? "true" : "false";
+        var message = "value of document.hasFocus(): " + focusStatusValue + ".";
+        updateLog(message);
+    };
 
     // Check focus status at intervals
     var checkInterval = 500;
@@ -52,7 +48,9 @@ iframe.onload = function() {
     function updateLog(message) {
         var logElement = document.createElement('h3');
         logElement.innerText = message;
-        logContainer.appendChild(logElement);
+
+        // Insert the new log element at the beginning of the logContainer
+        logContainer.insertBefore(logElement, logContainer.firstChild);
     }
 
     function getBrowserVersion() {
