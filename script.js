@@ -51,6 +51,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Insert the new log element at the beginning of the logContainer
         logContainer.insertBefore(logElement, logContainer.firstChild);
+
+        // Optionally: Clear any undefined or null firstChild
+        if (!logContainer.firstChild) {
+            logContainer.appendChild(logElement);
+        }
     }
 
     function getBrowserVersion() {
