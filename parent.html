@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Focus Test</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Iframe Focus Test</h1>
+    <div>This page tests how focus is handled when interacting with an multiple files in iframe. Click on Go to Page button to shift to another page</div>
+    <!-- <p id="focusStatus"></p> -->
+    <h2 id="h2"></h2>
+
+    <!-- Iframe will be loaded directly in the HTML -->
+    <iframe id="yourIframeId" src="one.html" width="100%" height="200px" style="border: 1px solid #ccc;"></iframe>
+
+    <!-- Container for logging focus changes -->
+    <div id="logContainer"></div>
+</body>
+</html>
